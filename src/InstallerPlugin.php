@@ -54,8 +54,8 @@ class InstallerPlugin  implements PluginInterface, EventSubscriberInterface {
     $root = $composer->getConfig()->get('vendor-dir') . '/..';
 
     $extra = $composer->getPackage()->getExtra();
-    $backstop_addons_extras = $extra['backstop-addons'] ?? [];
-    $destination = $backstop_addons_extras['destination'] ?? 'tests/backstopjs/common/libraries/backstopjs-addons';
+    $backstop_addons_extras = $extra['backstopjs-addons'] ?? [];
+    $destination = $backstop_addons_extras['path'] ?? 'tests/backstopjs/common/libraries/backstopjs-addons';
     $destination = "{$root}/{$destination}";
 
     if (is_dir($destination)) {
