@@ -1,7 +1,16 @@
 {
     "name": "metadrop/backstopjs-addons",
     "description": "Metadrop custom backstopjs scripts",
-    "type": "library",
-    "minimum-stability": "dev",
-    "require": {}
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Metadrop\\BackstopjsAddons\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "Metadrop\\BackstopjsAddons\\InstallerPlugin"
+    }
 }
