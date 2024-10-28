@@ -89,9 +89,9 @@ module.exports = async (page, scenario, config) => {
             'autoplay': false,
           }, true);
         });
-      }
 
-      $(carousel).slick('slickGoTo', 0, true);
+        $(carousel).slick('slickGoTo', 0, true);
+      }
     });
     if (slickCarousels.length > 0) {
       const head = document.head || document.getElementsByTagName('head')[0];
