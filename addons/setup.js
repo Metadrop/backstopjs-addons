@@ -112,5 +112,5 @@ module.exports = async (page, scenario, config) => {
   });
 
   // Wait for assets to load.
-  await page.waitForNetworkIdle();
+  await page.waitForNetworkIdle({ "concurrency": 1 });
 }
