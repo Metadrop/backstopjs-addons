@@ -102,6 +102,16 @@ module.exports = async (page, scenario, config) => {
       style.setAttribute('type', 'text/css');
       style.appendChild(document.createTextNode(css));
     }
+
+    // Force oembed-lazyload videos to not load when using intersection observer strategy.
+    const oembedLazyVideos = document.querySelectorAll('.oembed-lazyload[data-strategy= "intersection-observer"]');
+    oembedLazyVideos.forEach((video) => {
+      video.setAttribute('data-strategy', 'onclick');
+      video.querySelector('.oembed-lazyload__button').classList.remove(['oembed-lazyload__button--loading', 'oembed-lazyload__button--hidden']);
+      const iframe = video.querySelector('iframe');
+      iframe.classList.remove('oembed-lazyload__iframe');
+      iframe.style.display = 'none';
+    });
   }, config);
 
   // Wait for fonts to load.

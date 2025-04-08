@@ -32,6 +32,7 @@ By default, the library applies the following optimisations to the scenarios to 
 - Avoid asynchronous image decoding
 - Force Drupal.blazy to load all images
 - Pause the Slick slider autoplay
+- Force oembed-lazyload videos to not load
 - Wait for fonts to load
 - Wait for the page to load completely
 - Allow setting the `cookiePath` for the cookies.json globally to apply to all scenarios. If set in the scenario configuration, it will override the global configuration.
