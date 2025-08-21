@@ -122,5 +122,14 @@ module.exports = async (page, scenario, config) => {
   });
 
   // Wait for assets to load.
-  await page.waitForNetworkIdle({ "concurrency": 1 });
+  const networkOptions = scenario.networkOptions ?? config.backstopjsAddons.networkOptions;
+  if (networkOptions === 'none') {
+    return;
+  }
+
+  if (typeof networkOptions === 'object') {
+    await page.waitForNetworkIdle(networkOptions);
+  } else {
+    await page.waitForNetworkIdle();
+  }
 }

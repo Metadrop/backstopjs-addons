@@ -119,3 +119,21 @@ This option replaces the specified iframe(s) with a grey background, maintaining
       "label": "Hide iframe content example",
       "hideIframeContent": ".iframe-container-selector, .iframe-container-selector-2"
 ```
+
+### Scenario load options
+After all the scenario optimisations have been performed, the BackstopJS addons wait for the page to load completely. This uses the waitForNetworkIdle() function in Puppeteer to wait for the network to become idle. The 'networkOptions' option allows you to override this setting either globally or on a per-scenario basis.
+
+| Value     | Description                                                                                                          |
+|-----------|----------------------------------------------------------------------------------------------------------------------|
+| "default" | The default setup provided by Puppeteer will be applied.                                                             |
+| { key: value } | Any of the [waitfornetworkidle()](https://pptr.dev/api/puppeteer.waitfornetworkidleoptions) options can be provided. |
+| "none"    | No wait will be applied.                                                                                              |
+
+If not set, the "default" value will be applied.
+
+```json
+  "scenarios": [
+    {
+      "label": "Hide iframe content example",
+      "networkOptions": {"concurrency" : 1 }
+```

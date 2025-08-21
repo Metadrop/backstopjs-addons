@@ -56,6 +56,12 @@
       "url": "http://something.com/page-url",
       "readySelector": "body",
       "hideIframeContent": ".iframe-container-selector, .iframe-container-selector-2"
+    },
+    {
+      "label": "Custom network options example",
+      "url": "http://something.com/page-url",
+      "readySelector": "body",
+      "networkOptions": "default"
     }
   ],
   "paths": {
@@ -81,6 +87,9 @@
   "backstopjsAddons": {
     "path": "/path/to/backstopjs-addons",
     "loginUser": "global user name",
-    "loginPass": "global user pass"
+    "loginPass": "global user pass",
+    "networkOptions": {
+      "idleTime": 1000
+    }
   }
 }
