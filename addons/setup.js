@@ -71,6 +71,7 @@ module.exports = async (page, scenario, config) => {
       iframe.loading = 'eager';
     });
 
+    // Avoid Slick carousel autoplay.
     if (typeof $ == 'undefined' && typeof jQuery == 'function') {
       window.$ = jQuery;
     }
@@ -93,6 +94,7 @@ module.exports = async (page, scenario, config) => {
         $(carousel).slick('slickGoTo', 0, true);
       }
     });
+    // Improve text rendering for Slick carousels.
     if (slickCarousels.length > 0) {
       const head = document.head || document.getElementsByTagName('head')[0];
       const style = document.createElement('style');
@@ -102,6 +104,15 @@ module.exports = async (page, scenario, config) => {
       style.setAttribute('type', 'text/css');
       style.appendChild(document.createTextNode(css));
     }
+
+    // Avoid Swiper autoplay.
+    const swiperCarousels = document.querySelectorAll('.swiper-initialized');
+    swiperCarousels.forEach((carousel) => {
+      if (carousel.swiper) {
+        carousel.swiper.autoplay.stop();
+        carousel.swiper.slideTo(0, 0);
+      }
+    });
 
     // Force oembed-lazyload videos to not load when using intersection observer strategy.
     const oembedLazyVideos = document.querySelectorAll('.oembed-lazyload[data-strategy= "intersection-observer"]');

@@ -32,6 +32,7 @@ By default, the library applies the following optimisations to the scenarios to 
 - Avoid asynchronous image decoding
 - Force Drupal.blazy to load all images
 - Pause the Slick slider autoplay
+- Pause the Swiper slider autoplay
 - Force oembed-lazyload videos to not load
 - Wait for fonts to load
 - Wait for the page to load completely
