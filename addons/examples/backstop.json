@@ -21,47 +21,10 @@
   "onReadyScript": "onReady.js",
   "cookiePath": "cookies.json",
   "scenarios": [
-    {
-      "label": "Click an wait for selector example",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "clickSelector": ".element-to-click",
-      "waitForSelectorAfterInteraction": ".selector-to-wait-for-after-click"
-    },
-    {
-      "label": "Scroll to element example",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "scrollToSelector": ".element-to-scroll-to",
-      "postInteractionWait": 500
-    },
-    {
-      "label": "Stop animations example and delay screenshot",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "stopAnimationsSelectors": ".selectors-to-stop-animations",
-      "beforeScreenshotDelay": 2000
-    },
-    {
-      "label": "Login and go to page example",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "loginWrapperSelector": ".form-selector",
-      "loginUser": "user name to override the global one",
-      "loginPass": "password to override the global one",
-      "loginRedirectTo": "page_url/to/go/after/login"
-    },
-    {
-      "label": "Hide iframe content example",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "hideIframeContent": ".iframe-container-selector, .iframe-container-selector-2"
-    },
-    {
-      "label": "Custom network options example",
-      "url": "http://something.com/page-url",
-      "readySelector": "body",
-      "networkOptions": "default"
+  {
+      "label": "Homepage",
+      "url": "https://web/",
+      "readySelector": "body"
     }
   ],
   "paths": {
@@ -71,7 +34,9 @@
     "html_report": "html_report",
     "ci_report": "ci_report"
   },
-  "report": ["browser"],
+  "report": [
+    "browser"
+  ],
   "engine": "puppeteer",
   "engineOptions": {
     "args": [
@@ -80,16 +45,15 @@
       "--disable-setuid-sandbox",
       "--font-render-hinting=none"
     ],
-    "gotoParameters": { "waitUntil": ["load", "networkidle0"] }
+    "gotoParameters": {
+      "waitUntil": [
+        "networkidle0"
+      ]
+    }
   },
   "debug": false,
   "debugWindow": false,
   "backstopjsAddons": {
-    "path": "/path/to/backstopjs-addons",
-    "loginUser": "global user name",
-    "loginPass": "global user pass",
-    "networkOptions": {
-      "idleTime": 1000
-    }
+    "path": "/src/tests/common/libraries/backstopjs-addons"
   }
 }
