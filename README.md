@@ -44,7 +44,7 @@ By default, the library applies the following optimisations to the scenarios to 
 
 ### Stop animations
 
-Allow stopping the CSS animations on the provided CSS selectors, can be set on each scenario using the `stopAnimationsSelectors` property.
+It allows stopping the CSS animations on the provided CSS selectors. This can be set on each scenario using the `stopAnimationsSelectors` property.
 
 ```json
 "scenarios": [
@@ -57,7 +57,7 @@ Allow stopping the CSS animations on the provided CSS selectors, can be set on e
 
 ### Disable filters
 
-CSS filters can be disabled on the provided CSS selectors, can be set on each scenario using the `disableFiltersSelectors` property.
+CSS filters can be disabled on the provided CSS selectors. This can be set on each scenario using the `disableFiltersSelectors` property.
 
 ```json
 "scenarios": [
@@ -70,7 +70,7 @@ CSS filters can be disabled on the provided CSS selectors, can be set on each sc
 
 ### Log in and navigate to a specific page
 
-Allow users to log in and navigate to a specific page before taking a screenshot. To use this feature you need to set at least the following options
+It allows users to log in and navigate to a specific page before taking a screenshot. To use this feature you need to set at least the following options:
 
 - `loginWrapperSelector` - The selector of the element that wraps the login form.
 - `loginUser` - The username to login with
@@ -103,7 +103,7 @@ The `removeSelectors` option is applied after login and navigation.
 
 ### Wait for selector after interaction
 
-This option allows you to wait for a selector to appear after an interaction. This feature is configured within a scenario using the `waitForSelectorAfterInteraction' property, which takes a CSS selector.
+This option allows to wait for a selector to appear after an interaction. This feature is configured within a scenario using the `waitForSelectorAfterInteraction' property, which takes a CSS selector.
 
 ```json
 "scenarios": [
