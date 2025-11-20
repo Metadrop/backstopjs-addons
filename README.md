@@ -38,6 +38,7 @@ By default, the library applies the following optimisations to the scenarios to 
 - Pause the Slick slider autoplay
 - Pause the Swiper slider autoplay
 - Force oembed-lazyload videos to not load
+- Stop the HTML video and go to the second one
 - Wait for fonts to load
 - Wait for the page to load completely
 - Allow setting the `cookiePath` for the cookies.json globally to apply to all scenarios. If set in the scenario configuration, it will override the global configuration.

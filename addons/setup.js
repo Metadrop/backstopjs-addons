@@ -71,6 +71,13 @@ module.exports = async (page, scenario, config) => {
       iframe.loading = 'eager';
     });
 
+    // Pause videos.
+    document.querySelectorAll('video').forEach((video) => {
+      video.pause();
+      video.autoplay = false;
+      video.currentTime = 1;
+    });
+
     // Avoid Slick carousel autoplay.
     if (typeof $ == 'undefined' && typeof jQuery == 'function') {
       window.$ = jQuery;
