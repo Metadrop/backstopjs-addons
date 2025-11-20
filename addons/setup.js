@@ -72,7 +72,7 @@ module.exports = async (page, scenario, config) => {
     });
 
     // Pause videos.
-    document.querySelectorAll('video').forEach((video) => {
+    document.querySelectorAll('video[autoplay]').forEach((video) => {
       video.pause();
       video.autoplay = false;
       video.currentTime = 1;
