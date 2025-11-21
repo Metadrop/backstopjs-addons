@@ -6,7 +6,7 @@ module.exports = async (page, scenario, config) => {
       const head = document.head || document.getElementsByTagName('head')[0];
       const style = document.createElement('style');
       const scenarioSelector = scenario.stopAnimationsSelectors ? scenario.stopAnimationsSelectors : '';
-      const css = scenarioSelector + '{animation-duration: 0ms !important; animation-fill-mode: backwards !important; animation-iteration-count: 1 !important; transition-duration: 0ms !important; transition: none !important; visibility: visible !important;}';
+      const css = scenarioSelector + '{animation-duration: 0ms !important; animation-fill-mode: forwards !important; animation-iteration-count: 1 !important; transition-duration: 0ms !important; transition: none !important; visibility: visible !important;}';
 
       head.appendChild(style);
       style.setAttribute('type', 'text/css');
