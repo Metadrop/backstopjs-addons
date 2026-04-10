@@ -86,19 +86,14 @@ module.exports = async (page, scenario, config) => {
     slickCarousels.forEach((carousel) => {
 
       // Avoid autoplay in carousels.
+      $(carousel).slick('slickGoTo', -10, true);
       if ($(carousel).slick('slickGetOption', 'autoplay')) {
         $(carousel).slick('slickSetOption', {
           'speed': 0,
           'fade': false,
           'infinite': false
         }, false);
-        $(carousel).on('afterChange', function (event, slick) {
-          slick.slickSetOption({
-            'autoplay': false,
-          }, true);
-        });
-
-        $(carousel).slick('slickGoTo', 0, true);
+        $(carousel).slick('slickPause');
       }
     });
     // Improve text rendering for Slick carousels.
