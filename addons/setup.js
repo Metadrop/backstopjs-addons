@@ -115,9 +115,9 @@ module.exports = async (page, scenario, config) => {
     // Avoid Swiper autoplay.
     const swiperCarousels = document.querySelectorAll('.swiper-initialized');
     swiperCarousels.forEach((carousel) => {
-      if (carousel.swiper) {
+      if (carousel.swiper && carousel.swiper.params.autoplay) {
         carousel.swiper.autoplay.stop();
-        carousel.swiper.slideTo(0, 0);
+        carousel.swiper.slideTo(carousel.swiper.params.initialSlide || 0, 0);
       }
     });
 
